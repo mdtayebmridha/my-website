@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    /* ===== Training Demo Styles (Not for real emails) ===== */
+    :root {
+      --bg: #f5f7fb;
+      --card: #ffffff;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --accent: #2563eb;
+      --warning: #b45309;
+      --warning-bg: #fff7ed;
+      --success: #065f46;
+    }
+    body {
+      margin: 0;
+      background: var(--bg);
+      font-family: ui-sans-serif, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      color: var(--text);
+      line-height: 1.6;
+    }
+    .wrap {
+      max-width: 720px;
+      margin: 40px auto;
+      padding: 0 16px;
+    }
+    .banner {
+      background: linear-gradient(90deg, #fde68a, #fca5a5);
+      color: #111827;
+      text-align: center;
+      padding: 10px 14px;
+      border-radius: 12px 12px 0 0;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+    }
+    .card {
+      background: var(--card);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+      border-radius: 0 0 12px 12px;
+      overflow: hidden;
+      position: relative;
+    }
+    .watermark {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      pointer-events: none;
+      opacity: 0.07;
+      font-size: clamp(28px, 7vw, 72px);
+      font-weight: 900;
+      text-transform: uppercase;
+      transform: rotate(-18deg);
+      color: #111827;
+    }
+    header {
+      padding: 18px 22px;
+      border-bottom: 1px solid #e5e7eb;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .avatar {
+      width: 36px; height: 36px; border-radius: 8px; background: #e5e7eb; display: grid; place-items: center; font-weight: 800;
+    }
+    .meta {
+      display: grid;
+    }
+    .meta small { color: var(--muted); }
+    main { padding: 22px; position: relative; }
+
+    .pill {
+      display: inline-block;
+      font-size: 12px;
+      background: var(--warning-bg);
+      color: var(--warning);
+      border: 1px solid #fed7aa;
+      padding: 2px 8px;
+      border-radius: 999px;
+      margin-left: 6px;
+      vertical-align: middle;
+    }
+
+    .btn {
+      display: inline-block;
+      text-decoration: none;
+      background: var(--accent);
+      color: white;
+      padding: 12px 18px;
+      border-radius: 10px;
+      font-weight: 700;
+      box-shadow: 0 6px 14px rgba(37,99,235,0.25);
+      margin: 12px 0 8px;
+    }
+    .btn[aria-disabled="true"] {
+      filter: grayscale(0.3) brightness(0.9);
+      cursor: not-allowed;
+    }
+    .hint {
+      font-size: 13px; color: var(--muted);
+    }
+    .divider {
+      margin: 20px 0; height: 1px; background: #e5e7eb;
+    }
+    footer { padding: 18px 22px; color: var(--muted); font-size: 14px; }
+    code { background: #f3f4f6; padding: 2px 6px; border-radius: 6px; }
+
+    /* Mobile email-like look */
+    @media (max-width: 480px){
+      .wrap{ margin: 20px auto; }
+      header, main, footer{ padding: 16px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap" role="region" aria-label="Phishing awareness training email">
+    <section class="card">
+      <header>
+        <div class="meta">
+        </div>
+      </header>
+
+      <main>
+        <p>Hi,</p>
+        <p>We detected unusual activity in your <strong>doogle</strong> account. If you do not reset your password <strong>within 24 hours</strong>, your doogle account will be permanently suspended.
+        </p>
+
+        <!-- The button below is intentionally disabled and points to a safe placeholder. -->
+        <a class="btn"href="https://accounts.google.com/v3/signin/identifier?authuser=0&continue=https%3A%2F%2Fmyaccount.google.com%2F&ec=GAlAwAE&hl=en_GB&service=accountsettings&flowName=GlifWebSignIn&flowEntry=AddSession&dsh=S1025831526%3A1756927263604005" 
+   style="display:inline-block; background:#2563eb; color:white; padding:12px 20px; 
+          border-radius:8px; text-decoration:none; font-weight:bold;">
+          Reset your Password now
+        </a>
+
+        <div class="divider"></div>
+
+        <p>If you ignore this message, you may lose access to all your emails.</p>
+
+        <p>Thank you,<br />
+      </main>
+    </section>
+  </div>
+</body>
+</html>
